@@ -5,9 +5,11 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practicas", "GUI_Dinamica\Practicas.csproj", "{2F7ED783-1D80-44AF-A43A-E9DD5A3AF8B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotonLibreria", "BotonLibreria\BotonLibreria.csproj", "{13AD1F98-9133-46CA-8716-5A01D3F3629F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "practicas3", "practicas3", "{F9B4850B-1CC9-49B3-B300-8C7F01627BDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuadroTexto", "CuadroTexto\CuadroTexto.csproj", "{1F17F42C-562F-49D0-B6A4-55800B0F2C14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaPrueva", "..\..\source\repos\LaPrueva\LaPrueva\LaPrueva.csproj", "{3180FCFA-F067-4501-B274-3FDDA7A100EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaPractica3", "..\..\source\repos\LibreriaPractica3\LibreriaPractica3\LibreriaPractica3.csproj", "{FE4727CA-02D5-4C10-8C54-3BB19A2D8752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,17 +21,21 @@ Global
 		{2F7ED783-1D80-44AF-A43A-E9DD5A3AF8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F7ED783-1D80-44AF-A43A-E9DD5A3AF8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F7ED783-1D80-44AF-A43A-E9DD5A3AF8B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13AD1F98-9133-46CA-8716-5A01D3F3629F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13AD1F98-9133-46CA-8716-5A01D3F3629F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13AD1F98-9133-46CA-8716-5A01D3F3629F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13AD1F98-9133-46CA-8716-5A01D3F3629F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F17F42C-562F-49D0-B6A4-55800B0F2C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F17F42C-562F-49D0-B6A4-55800B0F2C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F17F42C-562F-49D0-B6A4-55800B0F2C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F17F42C-562F-49D0-B6A4-55800B0F2C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3180FCFA-F067-4501-B274-3FDDA7A100EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3180FCFA-F067-4501-B274-3FDDA7A100EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3180FCFA-F067-4501-B274-3FDDA7A100EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3180FCFA-F067-4501-B274-3FDDA7A100EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4727CA-02D5-4C10-8C54-3BB19A2D8752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4727CA-02D5-4C10-8C54-3BB19A2D8752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4727CA-02D5-4C10-8C54-3BB19A2D8752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4727CA-02D5-4C10-8C54-3BB19A2D8752}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3180FCFA-F067-4501-B274-3FDDA7A100EA} = {F9B4850B-1CC9-49B3-B300-8C7F01627BDB}
+		{FE4727CA-02D5-4C10-8C54-3BB19A2D8752} = {F9B4850B-1CC9-49B3-B300-8C7F01627BDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {12FB1BB5-274C-4CD4-872E-7526805A6FDA}

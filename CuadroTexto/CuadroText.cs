@@ -12,12 +12,15 @@ namespace CuadroTexto
 {
     public partial class CuadroText: UserControl
     {
+        //Se asignan los tipos de entrada que estaran permitidos
         public enum InputType { Numeros, Letras, Ambos }
+        //Se define el tipo de entrada para el texBox
         public InputType ValorEntrada { get; set; } = InputType.Ambos;
         public CuadroText()
         {
             InitializeComponent();
         }
+        //Se realiza la seleccion y validacion dependiendo el tipo de entrada
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
             base.OnKeyPress(e);
