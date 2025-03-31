@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaPractica3", "Librer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaPrueva", "LaPrueva\LaPrueva\LaPrueva.csproj", "{3180FCFA-F067-4501-B274-3FDDA7A100EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pratica base de datos", "..\..\source\repos\prueba\prueba\Pratica base de datos.csproj", "{CA8A1B37-87D9-483B-AA2D-D52CC5D8E9F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pratica base de datos", "prueba\prueba\Pratica base de datos.csproj", "{CA8A1B37-87D9-483B-AA2D-D52CC5D8E9F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
