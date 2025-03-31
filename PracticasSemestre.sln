@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaPractica3", "Librer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaPrueva", "LaPrueva\LaPrueva\LaPrueva.csproj", "{3180FCFA-F067-4501-B274-3FDDA7A100EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pratica base de datos", "..\..\source\repos\prueba\prueba\Pratica base de datos.csproj", "{CA8A1B37-87D9-483B-AA2D-D52CC5D8E9F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3180FCFA-F067-4501-B274-3FDDA7A100EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3180FCFA-F067-4501-B274-3FDDA7A100EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3180FCFA-F067-4501-B274-3FDDA7A100EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA8A1B37-87D9-483B-AA2D-D52CC5D8E9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8A1B37-87D9-483B-AA2D-D52CC5D8E9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8A1B37-87D9-483B-AA2D-D52CC5D8E9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8A1B37-87D9-483B-AA2D-D52CC5D8E9F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
