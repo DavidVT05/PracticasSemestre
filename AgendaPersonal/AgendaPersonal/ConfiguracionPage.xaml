@@ -4,20 +4,17 @@
              x:Class="AgendaPersonal.ConfiguracionPage"
              Title="ConfiguracionPage">
     <VerticalStackLayout>
-        <AbsoluteLayout>
-            <Label Text="Configuración" FontSize="Large" 
-                   AbsoluteLayout.LayoutBounds="0.5,0.5,150,30"
-                   AbsoluteLayout.LayoutFlags="PositionProportional" />
-            <Switch AbsoluteLayout.LayoutBounds="0.1,0.3,100,30"
-                    AbsoluteLayout.LayoutFlags="PositionProportional" />
-            
-            <Label Text="Activar Notificaciones"
-                   AbsoluteLayout.LayoutBounds="0.5,3,200,30"
-                   AbsoluteLayout.LayoutFlags="PositionProportional" />
-            
-            <Button Text="Cambiar Tema" BackgroundColor="LightSkyBlue" 
-                    AbsoluteLayout.LayoutBounds="0.5,10,150,40"
-                    AbsoluteLayout.LayoutFlags="PositionProportional" />
-        </AbsoluteLayout>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label Text="Configuración" FontSize="Large" HorizontalOptions="Center" />
+
+            <Label Text="Activar Notificaciones" />
+            <Switch HorizontalOptions="Start" />
+
+            <Button Text="Cambiar Tema" Clicked="Cambiar" BackgroundColor="LightSkyBlue"
+                    HorizontalOptions="Center" />
+
+            <Button Text="Cerrar sesión" Clicked="IrCerrar" BackgroundColor="LightSkyBlue"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
