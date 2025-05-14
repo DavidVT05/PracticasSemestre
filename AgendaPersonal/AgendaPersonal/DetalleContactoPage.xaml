@@ -15,9 +15,6 @@
             <Label Grid.Row="2" Grid.Column="0" Text="Correo:"
                    FontAttributes="Bold" />
             <Label Grid.Row="2" Grid.Column="1" Text="{Binding Correo}" />
-            <Label Grid.Row="3" Grid.Column="0" Text="Dirección:"
-                   FontAttributes="Bold" />
-            <Label Grid.Row="3" Grid.Column="1" Text="{Binding Direccion}" />
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
