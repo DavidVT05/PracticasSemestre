@@ -16,5 +16,7 @@
                    FontAttributes="Bold" />
             <Label Grid.Row="2" Grid.Column="1" Text="{Binding Correo}" />
         </Grid>
+        <Button Text="Editar" Clicked="OnEditarClicked" />
+        <Button Text="Eliminar" Clicked="OnEliminarClicked" BackgroundColor="Red" TextColor="White" />
     </VerticalStackLayout>
 </ContentPage>

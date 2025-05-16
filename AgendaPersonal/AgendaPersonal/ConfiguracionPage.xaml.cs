@@ -1,16 +1,23 @@
 using AgendaPersonal.Utils;
 using AgendaPersonal.Views;
 using System.Globalization;
+using AgendaPersonal.Datos;
+using AgendaPersonal.Modelos;
 
 namespace AgendaPersonal;
 
 public partial class ConfiguracionPage : ContentPage
 {
-	public ConfiguracionPage()
+    private UsuarioDataBase db;
+    public ConfiguracionPage()
 	{
 		InitializeComponent();
         temaSwitch.IsToggled = ConfiguracionApp.ObtenerTema();
         idiomaPicker.SelectedItem = ConfiguracionApp.ObtenerIdioma();
+        string dbPath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            "usuario.db3");
+        db = new UsuarioDataBase(dbPath);
     }
     private void OnTemaToggled(object sender, ToggledEventArgs e)
     {
@@ -46,12 +53,40 @@ public partial class ConfiguracionPage : ContentPage
     }
     private async void IrCerrar(object sender, EventArgs e)
     {
-        if (await DisplayAlert("Are you sure?", "You will be logged out.", "Yes", "No"))
+        if (await DisplayAlert("¿Está seguro?", "Se cerrará su sesión.", "Sí", "No"))
         {
             Preferences.Remove("UsuarioActual");
             SecureStorage.RemoveAll();
             await Shell.Current.GoToAsync("///login");
         }
     }
+    private async void OnEliminarUsuarioClicked(object sender, EventArgs e)
+    {
+        string nombre = Preferences.Get("UsuarioActual", string.Empty);
+        if (string.IsNullOrEmpty(nombre))
+        {
+            await DisplayAlert("Error", "No se encontró el usuario actual.", "OK");
+            return;
+        }
 
+        var usuario = await db.ObtenerUsuarioPorNombreAsync(nombre);
+        if (usuario == null)
+        {
+            await DisplayAlert("Error", "Usuario no encontrado.", "OK");
+            return;
+        }
+
+        bool confirmar = await DisplayAlert("Confirmar eliminación",
+            $"¿Estás seguro de que deseas eliminar tu cuenta ({usuario.NombreUsuario})?",
+            "Sí", "No");
+
+        if (confirmar)
+        {
+            await db.EliminarUsuarioAsync(usuario);
+            Preferences.Remove("UsuarioActual");
+            await DisplayAlert("Cuenta eliminada", "Tu cuenta ha sido eliminada correctamente.", "OK");
+            
+        }
+        await Shell.Current.GoToAsync("//login");
+    }
 }

@@ -20,8 +20,13 @@
         </Picker>
 
         <Label x:Name="lblEstado" Text="Cambios guardados" IsVisible="False" TextColor="DeepSkyBlue" FontAttributes="Italic" />
-        
+
         <Button Text="Cerrar sesión" Clicked="IrCerrar" BackgroundColor="LightSkyBlue"
          HorizontalOptions="Center" />
+        <Button Text="Eliminar cuenta"
+            Clicked="OnEliminarUsuarioClicked"
+            BackgroundColor="IndianRed"
+            TextColor="White"
+            HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

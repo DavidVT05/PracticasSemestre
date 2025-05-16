@@ -33,7 +33,7 @@ public partial class ContactosPage : ContentPage
     {
         if (e.CurrentSelection.FirstOrDefault() is Contacto seleccionado)
         {
-            await Navigation.PushAsync(new CrearContactoPage(seleccionado));
+            await Navigation.PushAsync(new DetalleContactoPage(seleccionado));
         }
     }
 

@@ -8,8 +8,8 @@ public partial class CrearContactoPage : ContentPage
     private ContactoDataBase db = new ContactoDataBase();
     private Contacto contacto;
     public CrearContactoPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         contacto = new Contacto();
     }
     public CrearContactoPage(Contacto c)
@@ -36,7 +36,15 @@ public partial class CrearContactoPage : ContentPage
         contacto.Telefono = telefonoEntry.Text;
         contacto.CorreoElectronico = correoEntry.Text;
 
+        bool esNuevo = contacto.Id == 0;
+
         await db.GuardarContactoAsync(contacto);
+
+        if (esNuevo)
+            await DisplayAlert("Contacto creado", "El contacto ha sido agregado correctamente.", "OK");
+        else
+            await DisplayAlert("Contacto actualizado", "Los datos del contacto se han actualizado.", "OK");
+
         await Navigation.PopAsync();
     }
 }
