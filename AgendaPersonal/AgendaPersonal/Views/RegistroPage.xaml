@@ -8,6 +8,19 @@
         <Entry x:Name="emailEntry" Placeholder="Correo electrónico" />
         <Entry x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" />
         <Entry x:Name="confirmPasswordEntry" Placeholder="Confirmar contraseña" IsPassword="True" />
+        <!-- PREGUNTA DE SEGURIDAD --> 
+        <Picker x:Name="preguntaPicker" Title="Selecciona una pregunta de seguridad">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>¿Cuál es el nombre de tu primera mascota?</x:String>
+                    <x:String>¿Cuál es tu comida favorita?</x:String>
+                    <x:String>¿En qué ciudad naciste?</x:String>
+                    <x:String>¿Cuál es el segundo nombre de tu madre?</x:String>
+                    <x:String>¿Cuál fue tu primer trabajo?</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Entry x:Name="respuestaSeguridadEntry" Placeholder="Respuesta de seguridad" />
         <Button Text="Registrarse" Clicked="OnRegistrarseClicked" />
     </VerticalStackLayout>
 </ContentPage>

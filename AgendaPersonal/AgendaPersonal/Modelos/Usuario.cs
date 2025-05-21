@@ -13,5 +13,7 @@ namespace AgendaPersonal.Modelos
         [MaxLength(100)]
         public string Correo { get; set; }
         public string Contraseña { get; set; }
+        public string PreguntaSeguridad { get; set; }
+        public string RespuestaSeguridad { get; set; }
     }
 }

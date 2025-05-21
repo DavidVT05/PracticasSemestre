@@ -20,7 +20,10 @@ public partial class RegistroPage : ContentPage
 		string correo = emailEntry.Text?.Trim().ToLower();
 		string contraseña = passwordEntry.Text;
 		string confirmarContraseña = confirmPasswordEntry.Text;
-		if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(contraseña) || string.IsNullOrEmpty(confirmarContraseña))
+		string pregunta = preguntaPicker.SelectedItem?.ToString();
+		string respuesta = respuestaSeguridadEntry.Text?.Trim();
+		if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(contraseña) || string.IsNullOrEmpty(confirmarContraseña) ||
+			string.IsNullOrEmpty(pregunta) || string.IsNullOrEmpty(respuesta))
 		{
 			await DisplayAlert("Error", "Tododos los campos son obligatorios.", "OK");
 			return;
@@ -40,7 +43,9 @@ public partial class RegistroPage : ContentPage
 		{
 			NombreUsuario = nombreUsuario,
 			Correo = correo,
-			Contraseña = contraseña
+			Contraseña = contraseña,
+			PreguntaSeguridad = pregunta,
+			RespuestaSeguridad = respuesta
 		};
 		await db.GuardarUsuarioAsync(nuevoUsuario);
 		await DisplayAlert("Exito", "Registro completo", "OK");

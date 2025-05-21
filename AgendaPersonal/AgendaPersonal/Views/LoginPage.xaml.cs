@@ -20,12 +20,9 @@ public partial class LoginPage : ContentPage
         return true;
     }
 
-    private void TapGestureRecognizerPwd_Tapped(object sender, TappedEventArgs e)
+    private async void TapGestureRecognizerPwd_Tapped(object sender, TappedEventArgs e)
     {
-        Label Reg = (sender as Label);
-        var Msg = Reg.FormattedText.Spans[1].Text;
-        //var customerName = (sender as Label).Text;
-        DisplayAlert("Recuperar Password", $"Name : {Msg}", "ok");
+        await Shell.Current.GoToAsync("//RecuperarPage");
     }
     private async void TapGestureRecognizerReg_Tapped(object sender, TappedEventArgs e)
     {
@@ -59,9 +56,12 @@ public partial class LoginPage : ContentPage
     private async Task<bool> IsCredentialCorrectAsync(string nombreUsuario, string contraseña)
     {
         
-        var usuario = await db.ObtenerUsuarioPorNombreAsync(nombreUsuario.Trim().ToLower());       
+        var usuario = await db.ObtenerUsuarioPorNombreAsync(nombreUsuario.Trim().ToLower());
+        if (usuario == null)
+        {
+            return false;
+        }
         //await DisplayAlert("Debug", $"Encontrado:\nCorreo:{usuario.Correo}\nContraseña: {usuario.Contraseña}", "OK");
-        return usuario.Contraseña.Trim() == contraseña.Trim();
-
+        return usuario.Contraseña.Trim().ToLower() == contraseña.Trim().ToLower();
     }
 }

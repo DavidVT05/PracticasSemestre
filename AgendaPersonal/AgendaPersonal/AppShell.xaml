@@ -16,6 +16,10 @@
      Title="Login" 
      ContentTemplate="{DataTemplate views:LoginPage}"
      Route="login"/>
+    <ShellContent 
+    Title="RecuperarPage"
+    ContentTemplate="{DataTemplate views:RecuperarPage}" 
+    Route="RecuperarPage"/>
     <!--Main Page-->
     <ShellContent
      Title="Home"
