@@ -2,15 +2,76 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AgendaPersonal.Views.RecuperarPage"
-             Title="RecuperarPage">
-    <VerticalStackLayout Padding="20" Spacing="15">
-        <Entry x:Name="usuarioEntry" Placeholder="Nombre de usuario" />
-        <Button Text="Buscar pregunta de seguridad" Clicked="BuscarPreguntaClicked" />
+             BackgroundColor="#F4F4F4"
+             Title="Recuperar Contraseña">
 
-        <Label x:Name="preguntaLabel" IsVisible="False" FontAttributes="Bold"/>
-        <Entry x:Name="respuestaEntry" Placeholder="Respuesta" IsVisible="False" />
-        <Button Text="Recuperar contraseña" Clicked="RecuperarClicked" IsVisible="False" />
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+            <Frame BackgroundColor="White"
+                   BorderColor="#D1D1D1"
+                   CornerRadius="12"
+                   Padding="25"
+                   HasShadow="True"
+                   WidthRequest="360"
+                   HorizontalOptions="Center">
+                <VerticalStackLayout Spacing="18">
 
-        <Label x:Name="resultadoLabel" TextColor="Green" IsVisible="False"/>
-    </VerticalStackLayout>
+                    <Label Text="Recuperar contraseña"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="#2E2E2E"
+                           HorizontalOptions="Center" />
+
+                    <Entry x:Name="usuarioEntry"
+                           Placeholder="Ingrese su nombre de usuario"
+                           FontSize="16"
+                           BackgroundColor="#FAFAFA"
+                           TextColor="Black"
+                           PlaceholderColor="#999999"
+                           Margin="0"
+                           HeightRequest="45"
+                           Keyboard="Text" />
+
+                    <Button Text="Buscar pregunta de seguridad"
+                            Clicked="BuscarPreguntaClicked"
+                            BackgroundColor="#0078D4"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="45" />
+
+                    <Label x:Name="preguntaLabel"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           TextColor="#2E2E2E"
+                           IsVisible="False" />
+
+                    <Entry x:Name="respuestaEntry"
+                           Placeholder="Ingrese su respuesta"
+                           FontSize="16"
+                           BackgroundColor="#FAFAFA"
+                           TextColor="Black"
+                           PlaceholderColor="#999999"
+                           HeightRequest="45"
+                           IsVisible="False" />
+
+                    <Button Text="Recuperar contraseña"
+                            Clicked="RecuperarClicked"
+                            BackgroundColor="#0078D4"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="8"
+                            HeightRequest="45"
+                            IsVisible="False" />
+
+                    <Label x:Name="resultadoLabel"
+                           FontSize="14"
+                           TextColor="Green"
+                           FontAttributes="Italic"
+                           HorizontalOptions="Center"
+                           IsVisible="False" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

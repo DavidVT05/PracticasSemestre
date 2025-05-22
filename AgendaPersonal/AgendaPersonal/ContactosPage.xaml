@@ -2,34 +2,71 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AgendaPersonal.ContactosPage"
-             Title="ContactosPage">
+             Title="Contactos"
+             BackgroundColor="#F4F4F4">
+
     <ScrollView>
-        <VerticalStackLayout Padding="20">
-            <Label x:Name = "titleLabel" Text="Agenda" FontAttributes="Bold"/>
-            <Button Text="Agregar Contacto" Clicked="OnAgregarContactoClicked" />
-            <CollectionView  x:Name="contactosView" 
-                         ItemsSource="{Binding Contacto}"
-                         SelectionMode="Single" SelectionChanged="OnContactoSeleccionado">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <SwipeView>
-                            <SwipeView.RightItems>
-                                <SwipeItems>
-                                    <SwipeItem Text="Eliminar" BackgroundColor="Red" Invoked="OnEliminarContacto" />
-                                </SwipeItems>
-                            </SwipeView.RightItems>
-                            <Grid Padding="10">
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Encabezado con título e ícono de agregar -->
+            <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                <Label x:Name="titleLabel"
+                       Text="Agenda"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#2C3E50"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start" />
+
+                <ImageButton Source="contacto.png"
+                             Clicked="OnAgregarContactoClicked"
+                             BackgroundColor="Transparent"
+                             HeightRequest="32"
+                             WidthRequest="32"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center" />
+            </Grid>
+
+            <!-- Lista de contactos -->
+            <Frame BorderColor="#DDDDDD"
+                   BackgroundColor="White"
+                   HasShadow="True"
+                   Padding="10"
+                   CornerRadius="0">
+                <CollectionView x:Name="contactosView"
+                                ItemsSource="{Binding Contacto}"
+                                SelectionMode="Single"
+                                SelectionChanged="OnContactoSeleccionado">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10" BackgroundColor="#FAFAFA" RowSpacing="5">
                                 <VerticalStackLayout>
-                                    <Label Text="{Binding Nombre}" FontAttributes="Bold"/>
-                                    <Label Text="{Binding Telefono}" />
-                                    <Label Text="{Binding CorreoElectronico}" FontSize="Small" />
+                                    <Label Text="{Binding Nombre}"
+                                           FontAttributes="Bold"
+                                           FontSize="16"
+                                           TextColor="#333333" />
+                                    <Label Text="{Binding Telefono}"
+                                           FontSize="14"
+                                           TextColor="#555555" />
+                                    <Label Text="{Binding CorreoElectronico}"
+                                           FontSize="12"
+                                           TextColor="#888888" />
                                 </VerticalStackLayout>
                             </Grid>
-                        </SwipeView>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <Button Text="Configuración" Clicked="OnConfiguracionClicked" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+            <Button Text="Configuración"
+                    Clicked="OnConfiguracionClicked"
+                    BackgroundColor="#BDC3C7"
+                    TextColor="#2C3E50"
+                    FontAttributes="Bold"
+                    HeightRequest="44"
+                    CornerRadius="0"
+                    HorizontalOptions="FillAndExpand" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
+

@@ -2,25 +2,95 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AgendaPersonal.Views.RegistroPage"
-             Title="RegistroPage">
-    <VerticalStackLayout Padding="20" Spacing="10">
-        <Entry x:Name="nombreUsuarioEntry" Placeholder="Nombre de usuario" />
-        <Entry x:Name="emailEntry" Placeholder="Correo electrónico" />
-        <Entry x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" />
-        <Entry x:Name="confirmPasswordEntry" Placeholder="Confirmar contraseña" IsPassword="True" />
-        <!-- PREGUNTA DE SEGURIDAD --> 
-        <Picker x:Name="preguntaPicker" Title="Selecciona una pregunta de seguridad">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>¿Cuál es el nombre de tu primera mascota?</x:String>
-                    <x:String>¿Cuál es tu comida favorita?</x:String>
-                    <x:String>¿En qué ciudad naciste?</x:String>
-                    <x:String>¿Cuál es el segundo nombre de tu madre?</x:String>
-                    <x:String>¿Cuál fue tu primer trabajo?</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
-        <Entry x:Name="respuestaSeguridadEntry" Placeholder="Respuesta de seguridad" />
-        <Button Text="Registrarse" Clicked="OnRegistrarseClicked" />
-    </VerticalStackLayout>
+             Title="Registro de Usuario"
+             BackgroundColor="#F4F4F4">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+            <Frame BackgroundColor="White"
+                   BorderColor="#CCCCCC"
+                   Padding="25"
+                   HasShadow="True"
+                   WidthRequest="360"
+                   HorizontalOptions="Center">
+                <VerticalStackLayout Spacing="16">
+
+                    <Label Text="Crear cuenta"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="#2E2E2E"
+                           HorizontalOptions="Center" />
+
+                    <Entry x:Name="nombreUsuarioEntry"
+                           Placeholder="Nombre de usuario"
+                           FontSize="16"
+                           BackgroundColor="#F9F9F9"
+                           TextColor="#333333"
+                           PlaceholderColor="#999999"
+                           HeightRequest="44" />
+
+                    <Entry x:Name="emailEntry"
+                           Placeholder="Correo electrónico"
+                           FontSize="16"
+                           BackgroundColor="#F9F9F9"
+                           TextColor="#333333"
+                           PlaceholderColor="#999999"
+                           HeightRequest="44"
+                           Keyboard="Email" />
+
+                    <Entry x:Name="passwordEntry"
+                           Placeholder="Contraseña"
+                           IsPassword="True"
+                           FontSize="16"
+                           BackgroundColor="#F9F9F9"
+                           TextColor="#333333"
+                           PlaceholderColor="#999999"
+                           HeightRequest="44" />
+
+                    <Entry x:Name="confirmPasswordEntry"
+                           Placeholder="Confirmar contraseña"
+                           IsPassword="True"
+                           FontSize="16"
+                           BackgroundColor="#F9F9F9"
+                           TextColor="#333333"
+                           PlaceholderColor="#999999"
+                           HeightRequest="44" />
+
+                    <Picker x:Name="preguntaPicker"
+                            Title="Selecciona una pregunta de seguridad"
+                            FontSize="16"
+                            HeightRequest="44"
+                            TitleColor="#666666"
+                            TextColor="#333333"
+                            BackgroundColor="#F9F9F9">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>¿Cuál es el nombre de tu primera mascota?</x:String>
+                                <x:String>¿Cuál es tu comida favorita?</x:String>
+                                <x:String>¿En qué ciudad naciste?</x:String>
+                                <x:String>¿Cuál es el segundo nombre de tu madre?</x:String>
+                                <x:String>¿Cuál fue tu primer trabajo?</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Entry x:Name="respuestaSeguridadEntry"
+                           Placeholder="Respuesta de seguridad"
+                           FontSize="16"
+                           BackgroundColor="#F9F9F9"
+                           TextColor="#333333"
+                           PlaceholderColor="#999999"
+                           HeightRequest="44" />
+
+                    <Button Text="Registrarse"
+                            Clicked="OnRegistrarseClicked"
+                            BackgroundColor="#0078D4"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            HeightRequest="44" />
+
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

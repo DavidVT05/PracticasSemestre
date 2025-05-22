@@ -2,21 +2,53 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AgendaPersonal.DetalleContactoPage"
-             Title="DetalleContactoPage">
-    <VerticalStackLayout>
-        <Grid Padding="10" ColumnDefinitions="Auto,*"
-              RowDefinitions="Auto,Auto,Auto,Auto">
-            <Label Grid.Row="0" Grid.Column="0" Text="Nombre:"
-                   FontAttributes="Bold" />
-            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nombre}" />
-            <Label Grid.Row="1" Grid.Column="0" Text="Teléfono:"
-                   FontAttributes="Bold" />
-            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Telefono}" />
-            <Label Grid.Row="2" Grid.Column="0" Text="Correo:"
-                   FontAttributes="Bold" />
-            <Label Grid.Row="2" Grid.Column="1" Text="{Binding CorreoElectronico}" />
-        </Grid>
-        <Button Text="Editar" Clicked="OnEditarClicked" />
-        <Button Text="Eliminar" Clicked="OnEliminarClicked" BackgroundColor="Red" TextColor="White" />
+             Title="Detalle de Contactos"
+             BackgroundColor="#F4F4F4">
+
+    <VerticalStackLayout Padding="30" Spacing="25">
+
+        <Label Text="Detalle del Contacto"
+               FontSize="26"
+               FontAttributes="Bold"
+               TextColor="#2C3E50"
+               HorizontalOptions="Center" />
+
+        <Frame HasShadow="False"
+               BackgroundColor="White"
+               Padding="15"
+               CornerRadius="6">
+            <Grid ColumnDefinitions="Auto,*"
+                  RowDefinitions="Auto,Auto,Auto"
+                  RowSpacing="15"
+                  ColumnSpacing="10">
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre:" FontAttributes="Bold" TextColor="#2C3E50" />
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nombre}" TextColor="#34495E" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Teléfono:" FontAttributes="Bold" TextColor="#2C3E50" />
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Telefono}" TextColor="#34495E" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Correo:" FontAttributes="Bold" TextColor="#2C3E50" />
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding CorreoElectronico}" TextColor="#34495E" />
+            </Grid>
+        </Frame>
+
+        <Button Text="Editar"
+                Clicked="OnEditarClicked"
+                BackgroundColor="#0078D4"
+                TextColor="White"
+                FontAttributes="Bold"
+                HeightRequest="44"
+                CornerRadius="0"
+                HorizontalOptions="FillAndExpand" />
+
+        <Button Text="Eliminar"
+                Clicked="OnEliminarClicked"
+                BackgroundColor="IndianRed"
+                TextColor="White"
+                FontAttributes="Bold"
+                HeightRequest="44"
+                CornerRadius="0"
+                HorizontalOptions="FillAndExpand" />
+
     </VerticalStackLayout>
 </ContentPage>
